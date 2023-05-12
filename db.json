@@ -1,0 +1,54 @@
+{
+  "celulares": [
+   {
+    "id": 1,
+    "marca": "Sony",
+    "modelo": "Xperia Pro",
+    "precio": 2000,
+    "descripción": "este Xperia llega con el Qualcomm Snapdragon 888, una pantalla OLED 4K a 120Hz y 512 GB de memoria interna.",
+    "sistemaOperativo": "Android 10",
+    "imagen": "https://moviles.info/wp-content/uploads/2021/01/Sony-Xperia-Pro.png.webp",
+    "lanzamiento": "26/01/2021"
+   },
+   {
+    "id": 2,
+    "marca": "Motorola",
+    "modelo": "Edge S",
+    "precio": 236,
+    "descripción": "El Motorola Edge S es un dispositivo 5G con el que la marca no parece haber escatimado en componentes. Monta hasta 8 GB de memoria RAM LPDDR5, almacenamiento interno UFS 3.1 (la más rápida actualmente) y una triple cámara trasera con un sensor principal de 64 megapíxeles.",
+    "sistemaOperativo": "Android 11",
+    "imagen": "https://i.blogs.es/88476e/motorola-edge-s1/450_1000.jpeg",
+    "lanzamiento": "26/01/2021"
+   },
+   {
+    "id": 3,
+    "marca": "Huawei",
+    "modelo": "Nova 8 Pro",
+    "precio": 450,
+    "descripción": "El Huawei nova 8 Pro es la variante mas poderosa de la serie nova 8. El nova 8 Pro llega con una pantalla OLED de 6.72 pulgadas a resolución Full HD+ y está potenciado por un procesador Kirin 985 que provee conectividad 5G, con 8GB de memoria RAM y 128GB o 256GB de almacenamiento interno sin posibilidad de expansión.",
+    "sistemaOperativo": "Android 10",
+    "imagen": "https://moviles.info/wp-content/uploads/2020/12/HUAWEI-nova8-Pro.png.webp",
+    "lanzamiento": "23/12/2020"
+   },
+   {
+    "id": 4,
+    "marca": "iPhone",
+    "modelo": "12 Pro Max",
+    "precio": 1200,
+    "descripción": "El iPhone 12 Pro Max tiene una pantalla Super Retina de 6.7 pulgadas con resolución de 2688 x 1242 píxeles. El dispositivo de gama alta plus funciona con el procesador Apple A14 combinado con 6GB de memoria RAM y 128/256 o 512 GB de memoria interna.",
+    "sistemaOperativo": "iOS 14",
+    "imagen": "https://http2.mlstatic.com/D_NQ_NP_614407-MLA46088610404_052021-O.jpg",
+    "lanzamiento": "24/09/2020"
+   },
+   {
+    "id": 5,
+    "marca": "Samsung",
+    "modelo": "Galaxy Note 10 Plus",
+    "precio": 1000,
+    "descripción": "El Samsung Galaxy Note 10+ viene con una pantalla AMOLED 6.8 pulgadas con una resolución de 3040 x 1440 píxeles, protección Corning Gorilla Glass y soporte HDR10+. El procesador Snapdragon 855 (o Exynos 9825) integrado en el teléfono inteligente ofrece una velocidad de reloj de 2,84 GHz y cuenta con la ayuda de una GPU Adreno 640 (o Mali-G76 MP12).",
+    "sistemaOperativo": "Android 9.0",
+    "imagen": "https://moviles.info/wp-content/uploads/2019/08/samsung-galaxy-note-10-plus-02.png.webp",
+    "lanzamiento": "08/08/2019"
+   }
+  ]
+ }
