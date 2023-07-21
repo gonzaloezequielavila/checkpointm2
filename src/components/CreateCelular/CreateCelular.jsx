@@ -16,12 +16,109 @@ IMPORTANTE
 */
 
 import * as Redux from "react-redux";
-import * as actions from "../../redux/actions/index";
+import * as actions from "../../redux/actions";
+import { useDispatch } from "react-redux";
 
 import React from "react";
 
+const validation = (state) => {
+  const errors = {}
+
+  if(state.marca.length > 30) {errors.marca = "Nombre de marca demasiado largo"}
+  if(state.modelo.length > 30) {errors.modelo = "Nombre de modelo demasiado largo"}
+  if(state.precio <= 30) {errors.precio = "El precio del celular tiene que ser mayor a 0"}
+
+  return errors
+}
+
 const CreateCelular = () => {
-  return <div></div>;
+  const [input, setInput] = React.useState({
+    marca: "",
+    modelo: "",
+    precio: 0,
+    descripción: "",
+    sistemaOperativo: "",
+    imagen: "",
+    lanzamiento: ""
+  });
+
+  const [errors, setErrors] = React.useState({
+    marca: "",
+    modelo: "",
+    precio: ""
+  })
+
+  const dispatch = useDispatch()
+
+  const handleChange = (event) => {
+    const property = event.target.name;
+    const value = event.target.value;
+
+    setInput({...input, [property]: value})
+    setErrors(validation({...input, [property]:value}))
+  }
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+
+    if(errors.marca === "" && errors.precio === "" && errors.precio === ""){
+      dispatch(actions.createCelular(input));
+    }
+  }
+
+
+  return (
+  <div>
+    <form onSubmit={handleSubmit}>
+      <div>
+        <label>Marca: </label>
+        <input type="text" name="marca" onChange={handleChange}></input>
+        {errors.marca && (<p>{errors.marca}</p>)}
+      </div>
+      <div>
+        <label>Modelo: </label>
+        <input type="text" name="modelo" onChange={handleChange}></input>
+        {errors.modelo && (<p>{errors.modelo}</p>)}
+      </div>
+      <div>
+        <label>Precio: </label>
+        <input type="number" name="precio" onChange={handleChange}></input>
+        {errors.precio && (<p>{errors.precio}</p>)}
+      </div>
+      <div>
+        <label>Descripción: </label>
+        <textarea type="text" name="descripción" onChange={handleChange}></textarea>
+      </div>
+      <div>
+        <label>Sistema Operativo: </label>
+        <input type="text" name="sistemaOperativo" onChange={handleChange}></input>
+      </div>
+      <div>
+        <label>Imagen: </label>
+        <input type="text" name="imagen" onChange={handleChange}></input>
+      </div>
+      <div>
+        <label>Lanzamiento: </label>
+        <input type="text" name="lanzamiento" onChange={handleChange}></input>
+      </div>
+      <button type="submit">Crear Celular</button>
+    </form>
+  </div>
+);
 };
+
+// export const mapStateToProps = (state) => {
+//   return {
+//     celulares: state.celulares
+//   }
+// }
+
+// export const mapDispatchToProps = (dispatch) =>{
+//   return{
+//     createCelular: function(newPhone){
+//       dispatch(createCelular(newPhone));
+//     },
+//   };
+// };
 
 export default CreateCelular;

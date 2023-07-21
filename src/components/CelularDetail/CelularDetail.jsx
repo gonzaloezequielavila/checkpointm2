@@ -18,12 +18,34 @@ IMPORTANTE
       - 'React.useEffect'
 */
 
+import { useParams } from "react-router-dom";
 import "./celularDetail.css";
-
+import * as actions from "../../redux/actions";
 import React from "react";
+import { useDispatch, useSelector } from "react-redux";
 
 const CelularDetail = (props) => {
-  return <div className="detail"></div>;
+  const {id} = useParams();
+  const dispatch = useDispatch()
+
+  const celular = useSelector((state) => state.celularDetail)
+
+  React.useEffect(()=> {
+    dispatch(actions.getCelularDetails(id))
+  }, [id])
+  
+
+  return (
+  <div className="detail">
+    <h1>{celular?.modelo}</h1>
+    <img src={celular?.imagen} alt={celular?.modelo} />
+    <h3>Precio: ${celular?.precio} USD</h3>
+    <h5>Marca: {celular?.marca}</h5>
+    <h5>Lanzamiento: {celular?.lanzamiento}</h5>
+    <h5>Sistema Operativo: {celular?.sistemaOperativo}</h5>
+    <h5>Descripción: {celular?.descripción}</h5>
+  </div>
+  );
 };
 
 export default CelularDetail;
